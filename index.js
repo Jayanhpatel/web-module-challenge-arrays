@@ -44,12 +44,15 @@ Use the copy function below to do the following:
   1. receive an array as a parameter - you will pass in originalFlavors as an argument when the function is invoked.
   2. Return a copy of the received array  
 */
+let test = ['1','2','3'];
 
-
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(makeCopy){
+ let arrayCopy = [];
+  for(let i=0;i<(makeCopy.length);i++){
+    arrayCopy[i]=makeCopy[i];
 }
-
+return arrayCopy;
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -63,8 +66,11 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(isit){
+  if(isit.length == 31){
+  return true;}
+  else{return false;}
+  
  }
 
 
@@ -81,9 +87,10 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/){
-  /*your code here*/
+let test3 = ['1','2','4']
+function addFlavor(base,newFlavor){
+ base.unshift(newFlavor);
+ return base
  }
 
 
@@ -100,10 +107,10 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(removeArray){
+removeArray.pop();
+return removeArray;
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -118,9 +125,10 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-}
+function getFlavorByIndex(base,find){
+ return base[find];
+  }
+
 
 
 
@@ -138,10 +146,14 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(base,find){
+  const index = base.indexOf(find);
+  if (index > -1) {
+    base.splice(index, 1);
+    return base
+  }
+  
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -163,8 +175,14 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(base,find){
+  let result= [];
+for(let i=0; i<base.length; i++){
+  if(base[i].includes(find)){
+    result.push(base[i])
+  }
+}
+return result
 }
 
 
